@@ -8,10 +8,14 @@
 	<body>
 		<h1>Jailor test page</h1>
 
+		<button onclick="lock()">Lock</button>
+
 		<script type="text/javascript">
-			Jailor.lock(function() {
-				return 'Oh noes!';
-			});
+			function lock() {
+				Jailor.lock(function() {
+					return 'Not so easily, boy!';
+				});
+			}
 		</script>
 	</body>
 </html>

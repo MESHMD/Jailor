@@ -21,16 +21,17 @@ var Jailor;
 		},
 
 		check: function check() {
-			var result = '';
+			var result = [];
 
 			conditions.forEach(function(condition) {
 				var evaluationResult = condition();
 
-				if (typeof result == 'string')
-					result += evaluationResult;
+				if (typeof evaluationResult == 'string')
+					result.push(evaluationResult);
 			});
 
-			return result;
+			if (result.length)
+				return result.join('\n');
 		}
 	}
 

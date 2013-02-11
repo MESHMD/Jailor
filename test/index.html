@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+	<head>
+		<meta charset="utf-8">
+		<title>Jailor test page</title>
+
+		<script src="../src/Jailor.js"></script>
+	</head>
+	<body>
+		<h1>Jailor test page</h1>
+
+		<script type="text/javascript">
+			Jailor.lock(function() {
+				return 'Oh noes!';
+			});
+		</script>
+	</body>
+</html>

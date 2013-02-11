@@ -19,3 +19,8 @@ Example
 			return 'The car is expected to have 4 wheels, not ' + car.wheelsCount + '!';	// return an error-description string to ask confirmation from the user
 		}	// return anything else than a string (or nothing) to allow the user to leave the page without any question
 	});
+
+Notes
+-----
+
+Jailor respects any previous `onbeforeunload` handler already in place, and will add it as a condition.

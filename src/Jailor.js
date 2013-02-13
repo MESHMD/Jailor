@@ -47,12 +47,12 @@ var Jailor;
 			conditions.forEach(function(condition) {
 				var evaluationResult = condition();
 
-				if (typeof evaluationResult == 'string')
+				if (typeof evaluationResult == 'string'
+					&& result.indexOf(evaluationResult) < 0)	// do not store duplicate messages
 					result.push(evaluationResult);
 			});
 
-			if (result.length)
-				return result.join('\n');
+			return result.join('\n\n• ') || null;	// join will always return a string, and even the empty string triggers a confirmation dialog
 		},
 
 		/** Clears all conditions.
